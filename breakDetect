@@ -1,0 +1,18 @@
+/*This code initializes that we want our code to be called break, and has our input from the conductive gel/window to be on pin 4.
+when the pulse in for four from a higher energy source than usual (after a 5 second delay) goes past 45 seconds (50 seconds in total),
+the code should activate pin 8 to output a voltage.*/
+
+#include <iostream>
+using namespace break;
+
+//We will use pin 4 or change this
+int pin = 4;
+
+void setup(){
+  pinmode(4, INPUT);
+}
+
+void main(){
+  if(pulseIn(4, HIGH, 5000000) >= 45000000)
+    pinmode(8, OUTPUT);
+}
