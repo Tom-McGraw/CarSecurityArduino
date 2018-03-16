@@ -12,9 +12,15 @@ void setup(){
   pinmode(4, INPUT);
 }
 
+void cameraOn(){
+  pinmode(8, OUTPUT);
+}
+
 void main(){
   loop(){
+    setup();
     if(pulseIn(4, HIGH, 5000000) >= 45000000)
-     pinmode(8, OUTPUT);
+     cameraOn();
+    
   }
 }
